@@ -12,4 +12,5 @@ public interface ContentConnector {
 
     public InputStream downloadFullText(String documentId);
 
+    public String getSourceName();
 }

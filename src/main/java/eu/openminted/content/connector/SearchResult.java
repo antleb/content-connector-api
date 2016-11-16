@@ -5,6 +5,7 @@ import eu.openminted.registry.domain.DocumentMetadataRecord;
 import eu.openminted.registry.domain.Facet;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by antleb on 11/7/16.
@@ -15,12 +16,12 @@ public class SearchResult {
     private int totalHits;
     private int from;
     private int to;
-    private List<Facet> facets;
+    private Map<String, Facet> facets;
 
     public SearchResult() {
     }
 
-    public SearchResult(List<DocumentMetadataRecord> publications, int totalHits, int from, int to, List<Facet> facets) {
+    public SearchResult(List<DocumentMetadataRecord> publications, int totalHits, int from, int to, Map<String, Facet> facets) {
         this.publications = publications;
         this.totalHits = totalHits;
         this.from = from;
@@ -60,11 +61,11 @@ public class SearchResult {
         this.to = to;
     }
 
-    public List<Facet> getFacets() {
+    public Map<String, Facet> getFacets() {
         return facets;
     }
 
-    public void setFacets(List<Facet> facets) {
+    public void setFacets(Map<String, Facet> facets) {
         this.facets = facets;
     }
 }
