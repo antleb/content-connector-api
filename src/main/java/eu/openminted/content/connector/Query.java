@@ -5,13 +5,20 @@ import java.util.Map;
 
 /**
  * Created by antleb on 11/7/16.
+ *
+ * Describes a query to a content provider
  */
 public class Query {
 
+    /** a generic keyword for a google like search **/
     private String keyword;
+    /** extra constraints of the query */
     private Map<String, List<String>> params;
+    /** the list of fields that browse information will be returned for. Empty list for no browse results.  */
     private List<String> facets;
+    /** used for paging only, inclusive */
     private int from;
+    /** used for paging only, non inclusive */
     private int to;
 
     public Query() {

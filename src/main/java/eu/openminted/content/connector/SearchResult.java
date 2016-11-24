@@ -12,16 +12,19 @@ import java.util.Map;
  */
 public class SearchResult {
 
-    private List<DocumentMetadataRecord> publications;
+    /** the page of metadata records in the omtd schema */
+    private List<String> publications;
+    /** the total number of results */
     private int totalHits;
     private int from;
     private int to;
-    private Map<String, Facet> facets;
+    /** facets */
+    private List<Facet> facets;
 
     public SearchResult() {
     }
 
-    public SearchResult(List<DocumentMetadataRecord> publications, int totalHits, int from, int to, Map<String, Facet> facets) {
+    public SearchResult(List<String> publications, int totalHits, int from, int to, List<Facet> facets) {
         this.publications = publications;
         this.totalHits = totalHits;
         this.from = from;
@@ -29,11 +32,11 @@ public class SearchResult {
         this.facets = facets;
     }
 
-    public List<DocumentMetadataRecord> getPublications() {
+    public List<String> getPublications() {
         return publications;
     }
 
-    public void setPublications(List<DocumentMetadataRecord> publications) {
+    public void setPublications(List<String> publications) {
         this.publications = publications;
     }
 
@@ -61,11 +64,11 @@ public class SearchResult {
         this.to = to;
     }
 
-    public Map<String, Facet> getFacets() {
+    public List<Facet> getFacets() {
         return facets;
     }
 
-    public void setFacets(Map<String, Facet> facets) {
+    public void setFacets(List<Facet> facets) {
         this.facets = facets;
     }
 }
