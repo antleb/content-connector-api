@@ -18,6 +18,11 @@ public class SearchResult {
     private List<Facet> facets;
 
     public SearchResult() {
+        this.publications = new ArrayList<>();
+        this.totalHits = 0;
+        this.from = 0;
+        this.to = 1;
+        this.facets = new ArrayList<>();
     }
 
     public SearchResult(List<String> publications, int totalHits, int from, int to, List<Facet> facets) {
