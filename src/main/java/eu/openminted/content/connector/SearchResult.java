@@ -35,12 +35,36 @@ public class SearchResult {
 
 
     public SearchResult merge(SearchResult result) {
-        this.setTotalHits(this.getTotalHits() + result.getTotalHits());
-
-        this.setFacets(mergeFacets(this.getFacets(), result.getFacets()));
+        this.setTotalHits(this.getTotalHits() + result.getTotalHits())
+                .setFacets(mergeFacets(this.getFacets(), result.getFacets()));
 
         //TODO: how to merge results? do we need to?
 
+        return this;
+    }
+
+    public SearchResult setTotalHits(int totalHits) {
+        this.totalHits = totalHits;
+        return this;
+    }
+
+    public SearchResult setPublications(List<String> publications) {
+        this.publications = publications;
+        return this;
+    }
+
+    public SearchResult setFrom(int from) {
+        this.from = from;
+        return this;
+    }
+
+    public SearchResult setTo(int to) {
+        this.to = to;
+        return this;
+    }
+
+    public SearchResult setFacets(List<Facet> facets) {
+        this.facets = facets;
         return this;
     }
 
@@ -82,6 +106,9 @@ public class SearchResult {
             } else {
                 temp.put(e.getKey(), facet);
             }
+
+            Collections.sort(temp.get(e.getKey()).getValues());
+            Collections.reverse(temp.get(e.getKey()).getValues());
         }
 
         return temp;
@@ -112,8 +139,6 @@ public class SearchResult {
 
             f.getValues().add(v);
         }
-
-        Collections.sort(f.getValues());
 
         return f;
     }
@@ -158,47 +183,23 @@ public class SearchResult {
         System.out.println("]");
     }
 
-
-
-
-
     public List<String> getPublications() {
         return publications;
-    }
-
-    public void setPublications(List<String> publications) {
-        this.publications = publications;
     }
 
     public int getTotalHits() {
         return totalHits;
     }
 
-    public void setTotalHits(int totalHits) {
-        this.totalHits = totalHits;
-    }
-
     public int getFrom() {
         return from;
-    }
-
-    public void setFrom(int from) {
-        this.from = from;
     }
 
     public int getTo() {
         return to;
     }
 
-    public void setTo(int to) {
-        this.to = to;
-    }
-
     public List<Facet> getFacets() {
         return facets;
-    }
-
-    public void setFacets(List<Facet> facets) {
-        this.facets = facets;
     }
 }
