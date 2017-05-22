@@ -1,21 +1,20 @@
 package eu.openminted.content.connector;
 
-import eu.openminted.registry.domain.RightsStmtNameEnum;
+import eu.openminted.registry.domain.RightsStatementEnum;
 
 public class RightsStmtNameConverter {
-    public static RightsStmtNameEnum convert(String bestLicence) {
+    public static RightsStatementEnum convert(String bestLicence) {
 
         switch (bestLicence) {
             case "Open Access":
-                return RightsStmtNameEnum.OPEN_ACCESS;
+                return RightsStatementEnum.OPEN_ACCESS;
             case "12 Months Embargo":
             case "6 Months Embargo":
             case "Embargo":
-                return RightsStmtNameEnum.EMBARGOED_ACCESS;
+                return RightsStatementEnum.EMBARGOED_ACCESS;
             case "Restricted":
-                return RightsStmtNameEnum.RESTRICTED_ACCESS;
             case "Closed Access":
-                return RightsStmtNameEnum.CLOSED_ACCESS;
+                return RightsStatementEnum.RESTRICTED_ACCESS;
         }
         return null;
     }
