@@ -196,6 +196,7 @@ public class LanguageConverter {
 
     private Map<String, String> _lang_code_to_name = new HashMap<>();
     private Map<String, String> _lang_name_to_code = new HashMap<>();
+    private Map<String, String> _openaire_name_to_openminted_name = new HashMap<>();
 
     private LanguageConverter() {
         _lang_code_to_name.put("aa", "Afar");
@@ -1167,6 +1168,69 @@ public class LanguageConverter {
         _lang_name_to_code.put("Zulu", "zu");
         _lang_name_to_code.put("Zuni", "zun");
         _lang_name_to_code.put("Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki", "zza");
+
+        _openaire_name_to_openminted_name.put("Afro-Asiatic", "Afro-Asiatic languages");
+        _openaire_name_to_openminted_name.put("Altaic", "Altaic languages");
+        _openaire_name_to_openminted_name.put("Aramaic", "Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)");
+        _openaire_name_to_openminted_name.put("Artificial", "Artificial languages");
+        _openaire_name_to_openminted_name.put("Athapascan", "Athapascan languages");
+        _openaire_name_to_openminted_name.put("Austronesian", "Austronesian languages");
+        _openaire_name_to_openminted_name.put("Baltic", "Baltic languages");
+        _openaire_name_to_openminted_name.put("Bamileke", "Bamileke languages");
+        _openaire_name_to_openminted_name.put("Banda", "Banda languages");
+        _openaire_name_to_openminted_name.put("Bantu", "Bantu languages");
+        _openaire_name_to_openminted_name.put("Beja", "Beja; Bedawiyet");
+        _openaire_name_to_openminted_name.put("Berber", "Berber languages");
+        _openaire_name_to_openminted_name.put("Bihari", "Bihari languages");
+        _openaire_name_to_openminted_name.put("Bini", "Bini; Edo");
+        _openaire_name_to_openminted_name.put("Caucasian", "Caucasian languages");
+        _openaire_name_to_openminted_name.put("Celtic", "Celtic languages");
+        _openaire_name_to_openminted_name.put("Central American Indian", "Central American Indian languages");
+        _openaire_name_to_openminted_name.put("Cushitic", "Cushitic languages");
+        _openaire_name_to_openminted_name.put("Dravidian", "Dravidian languages");
+        _openaire_name_to_openminted_name.put("Finno-Ugrian", "Finno-Ugrian languages");
+        _openaire_name_to_openminted_name.put("Germanic", "Germanic languages");
+        _openaire_name_to_openminted_name.put("Greek", "Greek, Modern (1453-)");
+        _openaire_name_to_openminted_name.put("Ancient Greek", "Greek, Ancient (to 1453)");
+        _openaire_name_to_openminted_name.put("Ijo", "Ijo languages");
+        _openaire_name_to_openminted_name.put("Indic", "Indic languages");
+        _openaire_name_to_openminted_name.put("Indo-European", "Indo-European languages");
+        _openaire_name_to_openminted_name.put("Iranian", "Iranian languages");
+        _openaire_name_to_openminted_name.put("Iroquoian", "Iroquoian languages");
+        _openaire_name_to_openminted_name.put("Karen", "Karen languages");
+        _openaire_name_to_openminted_name.put("Khoisan", "Khoisan languages");
+        _openaire_name_to_openminted_name.put("Kru", "Kru languages");
+        _openaire_name_to_openminted_name.put("Mayan", "Mayan languages");
+        _openaire_name_to_openminted_name.put("Mon-Kmer", "Mon-Kmer languages");
+        _openaire_name_to_openminted_name.put("Munda", "Munda languages");
+        _openaire_name_to_openminted_name.put("Niger-Kordofanian", "Niger-Kordofanian languages");
+        _openaire_name_to_openminted_name.put("Nilo-Saharan", "Nilo-Saharan languages");
+        _openaire_name_to_openminted_name.put("North American Indian", "North American Indian languages");
+        _openaire_name_to_openminted_name.put("Nubian", "Nubian languages");
+        _openaire_name_to_openminted_name.put("Old English", "English, Old (ca. 450-1100)");
+        _openaire_name_to_openminted_name.put("Otomian", "Otomian languages");
+        _openaire_name_to_openminted_name.put("Papuan-Australian", "Australian languages");
+        _openaire_name_to_openminted_name.put("Prakrit", "Prakrit languages");
+        _openaire_name_to_openminted_name.put("Sami", "Sami languages");
+        _openaire_name_to_openminted_name.put("Sino-Tibetan", "Sino-Tibetan languages");
+        _openaire_name_to_openminted_name.put("Siouan", "Siouan languages");
+        _openaire_name_to_openminted_name.put("Slavic", "Slavic languages");
+        _openaire_name_to_openminted_name.put("Songhai", "Songhai languages");
+        _openaire_name_to_openminted_name.put("Sorbian", "Sorbian languages");
+        _openaire_name_to_openminted_name.put("Wakashan", "Wakashan languages");
+        _openaire_name_to_openminted_name.put("Spanish", "Spanish; Castilian");
+        _openaire_name_to_openminted_name.put("Bokmål, Norwegian; Norwegian Bokmål", "BokmC%l, Norwegian; Norwegian BokmC%l");
+        _openaire_name_to_openminted_name.put("Miscellaneous", "Uncoded languages");
+        _openaire_name_to_openminted_name.put("Frisian", "Northern Frisian");
+        _openaire_name_to_openminted_name.put("Middle English", "English, Middle (1100-1500)");
+        _openaire_name_to_openminted_name.put("Middle Dutch", "Dutch, Middle (ca. 1050-1350)");
+        _openaire_name_to_openminted_name.put("Middle French", "French, Middle (ca. 1400-1600)");
+        _openaire_name_to_openminted_name.put("Middle High German", "German, Middle High (ca. 1050-1500)");
+        _openaire_name_to_openminted_name.put("Middle Irish", "Irish, Middle (900-1200)");
+        _openaire_name_to_openminted_name.put("Occitan (post 1500); Provençal", "Occitan (post 1500)");
+        _openaire_name_to_openminted_name.put("Raeto-Romance", "Romance languages");
+        _openaire_name_to_openminted_name.put("Khmer", "Central Khmer");
+        _openaire_name_to_openminted_name.put("Serbo-Croatian", "Serbian");
     }
 
     public Map<String, String> getLangCodeToName() {
@@ -1175,5 +1239,9 @@ public class LanguageConverter {
 
     public Map<String, String> getLangNameToCode() {
         return _lang_name_to_code;
+    }
+
+    public Map<String, String> getOpenaireToOMTDName() {
+        return _openaire_name_to_openminted_name;
     }
 }
