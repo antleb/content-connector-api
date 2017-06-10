@@ -11,7 +11,6 @@ public class RightsStmtNameConverter {
             case "12 Months Embargo":
             case "6 Months Embargo":
             case "Embargo":
-                return RightsStatementEnum.EMBARGOED_ACCESS;
             case "Restricted":
             case "Closed Access":
                 return RightsStatementEnum.RESTRICTED_ACCESS;
