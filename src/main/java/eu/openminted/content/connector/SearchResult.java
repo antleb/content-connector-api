@@ -72,8 +72,8 @@ public class SearchResult {
 //        Map<String, Facet> mf1 = new HashMap<>();
         if (f1 != null && f2 != null)
             return mergeFacets(
-                    f1.stream().collect(Collectors.toMap(Facet::getField, f -> f)),
-                    f2.stream().collect(Collectors.toMap(Facet::getField, f -> f))).
+                    f1.stream().collect(Collectors.toMap(f->f.getField().toLowerCase(), f -> f)),
+                    f2.stream().collect(Collectors.toMap(f->f.getField().toLowerCase(), f -> f))).
                     values().stream().collect(Collectors.toList());
 
         if (f1 == null && f2 == null) return new ArrayList<>();
@@ -87,9 +87,9 @@ public class SearchResult {
 
         for (Map.Entry<String, Facet> e : f1.entrySet()) {
             if (e.getKey().equalsIgnoreCase("publicationyear")) {
-                temp.put(e.getKey(), getPublicationYearFacet(e.getValue()));
+                temp.put(e.getKey().toLowerCase(), getPublicationYearFacet(e.getValue()));
             } else
-                temp.put(e.getKey(), e.getValue());
+                temp.put(e.getKey().toLowerCase(), e.getValue());
         }
 
         for (Map.Entry<String, Facet> e : f2.entrySet()) {
@@ -102,13 +102,13 @@ public class SearchResult {
             }
 
             if (temp.containsKey(e.getKey())) {
-                temp.put(e.getKey(), mergeFacet(temp.get(e.getKey()), facet));
+                temp.put(e.getKey().toLowerCase(), mergeFacet(temp.get(e.getKey().toLowerCase()), facet));
             } else {
-                temp.put(e.getKey(), facet);
+                temp.put(e.getKey().toLowerCase(), facet);
             }
 
-            Collections.sort(temp.get(e.getKey()).getValues());
-            Collections.reverse(temp.get(e.getKey()).getValues());
+            Collections.sort(temp.get(e.getKey().toLowerCase()).getValues());
+            Collections.reverse(temp.get(e.getKey().toLowerCase()).getValues());
         }
 
         return temp;
@@ -123,18 +123,18 @@ public class SearchResult {
         f.setValues(new ArrayList<>());
 
         for (Value v : f1.getValues())
-            temp.put(v.getValue(), v.getCount());
+            temp.put(v.getValue().toLowerCase(), v.getCount());
 
         for (Value v : f2.getValues())
-            if (temp.containsKey(v.getValue()))
-                temp.put(v.getValue(), v.getCount() + temp.get(v.getValue()));
+            if (temp.containsKey(v.getValue().toLowerCase()))
+                temp.put(v.getValue().toLowerCase(), v.getCount() + temp.get(v.getValue().toLowerCase()));
             else
-                temp.put(v.getValue(), v.getCount());
+                temp.put(v.getValue().toLowerCase(), v.getCount());
 
         for (Map.Entry<String, Integer> e : temp.entrySet()) {
             Value v = new Value();
 
-            v.setValue(e.getKey());
+            v.setValue(e.getKey().toLowerCase());
             v.setCount(e.getValue());
 
             f.getValues().add(v);
@@ -159,11 +159,11 @@ public class SearchResult {
             tmpValue.setCount(value.getCount());
             tmpValue.setValue(value.getValue().substring(0, 4));
 
-            if (tmpValues.containsKey(tmpValue.getValue())) {
-                int currentCount = tmpValues.get(tmpValue.getValue()).getCount();
-                tmpValues.get(tmpValue.getValue()).setCount(currentCount + tmpValue.getCount());
+            if (tmpValues.containsKey(tmpValue.getValue().toLowerCase())) {
+                int currentCount = tmpValues.get(tmpValue.getValue().toLowerCase()).getCount();
+                tmpValues.get(tmpValue.getValue().toLowerCase()).setCount(currentCount + tmpValue.getCount());
             } else {
-                tmpValues.put(tmpValue.getValue(), tmpValue);
+                tmpValues.put(tmpValue.getValue().toLowerCase(), tmpValue);
             }
         }
 

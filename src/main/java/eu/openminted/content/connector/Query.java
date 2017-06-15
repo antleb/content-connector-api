@@ -1,5 +1,6 @@
 package eu.openminted.content.connector;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -33,6 +34,9 @@ public class Query {
     }
 
     public List<String> getFacets() {
+        if (facets == null) {
+            facets = new ArrayList<>();
+        }
         return facets;
     }
 
