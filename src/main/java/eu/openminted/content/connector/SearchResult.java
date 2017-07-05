@@ -74,8 +74,8 @@ public class SearchResult {
         if (f1 != null && f2 != null)
             return mergeFacets(
                     f1.stream().collect(Collectors.toMap(f->WordUtils.capitalizeFully(f.getField()), f -> f)),
-                    f2.stream().collect(Collectors.toMap(f->WordUtils.capitalizeFully(f.getField()), f -> f))).
-                    values().stream().collect(Collectors.toList());
+                    f2.stream().collect(Collectors.toMap(f->WordUtils.capitalizeFully(f.getField()), f -> f)))
+                    .values().stream().collect(Collectors.toList());
 
         if (f1 == null && f2 == null) return new ArrayList<>();
 
