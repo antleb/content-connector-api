@@ -1,7 +1,7 @@
 package eu.openminted.content.connector;
 
-import eu.openminted.registry.domain.Facet;
-import eu.openminted.registry.domain.Value;
+import eu.openminted.registry.core.domain.Facet;
+import eu.openminted.registry.core.domain.Value;
 import org.apache.commons.lang.WordUtils;
 
 import java.util.*;
