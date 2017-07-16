@@ -1,5 +1,6 @@
 package eu.openminted.content.connector;
 
+import eu.openminted.content.connector.faceting.OMTDFacetEnum;
 import eu.openminted.registry.core.domain.Facet;
 import eu.openminted.registry.core.domain.Value;
 import org.apache.commons.lang.WordUtils;
@@ -91,10 +92,10 @@ public class SearchResult {
             Facet facet;
             String keyName = WordUtils.capitalizeFully(e.getKey());
 
-            if (e.getKey().equalsIgnoreCase("publicationyear")) {
-                facet = getPublicationYearFacet(e.getValue());
+            if (e.getKey().equalsIgnoreCase(OMTDFacetEnum.PUBLICATION_YEAR.value())) {
+                facet = buildFacet(getPublicationYearFacet(e.getValue()));
             } else
-                facet = e.getValue();
+                facet = buildFacet(e.getValue());
 
             for (Value value : facet.getValues()) {
                 value.setValue(WordUtils.capitalizeFully(value.getValue()));
@@ -107,10 +108,11 @@ public class SearchResult {
             Facet facet;
             String keyName = WordUtils.capitalizeFully(e.getKey());
 
-            if (e.getKey().equalsIgnoreCase("publicationyear")) {
-                facet = getPublicationYearFacet(e.getValue());
-            } else {
-                facet = e.getValue();
+            if (e.getKey().equalsIgnoreCase(OMTDFacetEnum.PUBLICATION_YEAR.value())) {
+                facet = buildFacet(getPublicationYearFacet(e.getValue()));
+            }
+            else {
+                facet = buildFacet(e.getValue());
             }
 
             for (Value value : facet.getValues()) {
@@ -164,10 +166,14 @@ public class SearchResult {
     }
 
     private Facet getPublicationYearFacet(Facet publicationYearFacet) {
-        Facet facet = new Facet();
-        facet.setField(publicationYearFacet.getField());
-        facet.setLabel(publicationYearFacet.getLabel());
-        facet.setValues(mergeValues(publicationYearFacet));
+        for (Value value : publicationYearFacet.getValues()) {
+            value.setValue(value.getValue().substring(0, 4));
+        }
+        return publicationYearFacet;
+    }
+
+    private Facet buildFacet(Facet facet) {
+        facet.setValues(mergeValues(facet));
         return facet;
     }
 
@@ -177,7 +183,7 @@ public class SearchResult {
         for (Value value : facet.getValues()) {
             Value tmpValue = new Value();
             tmpValue.setCount(value.getCount());
-            tmpValue.setValue(value.getValue().substring(0, 4));
+            tmpValue.setValue(value.getValue());
 
             String keyName = WordUtils.capitalizeFully(tmpValue.getValue());
 
