@@ -10,6 +10,8 @@ public class OMTDFacetInitializer {
     private Map<OMTDFacetEnum, String> omtdFacetLabels = new HashMap<>();
     private Map<RightsStatementEnum, String> omtdRightsStmtLabels = new HashMap<>();
     private Map<PublicationTypeEnum, String> omtdPublicationTypeLabels = new HashMap<>();
+    private Map<String, PublicationTypeEnum> omtdGetPublicationTypeEnumFromLabel = new HashMap<>();
+    private Map<String, RightsStatementEnum> omtdGetRightsStmtEnumFromLabel = new HashMap<>();
 
 
     public OMTDFacetInitializer() {
@@ -41,6 +43,28 @@ public class OMTDFacetInitializer {
         omtdPublicationTypeLabels.put(PublicationTypeEnum.CONTRIBUTION_TO_JOURNAL, "Contribution to Journal");
         omtdPublicationTypeLabels.put(PublicationTypeEnum.DATA_PAPER, "Data Paper");
         omtdPublicationTypeLabels.put(PublicationTypeEnum.OTHER, "Other");
+
+        omtdGetPublicationTypeEnumFromLabel.put("Annotation", PublicationTypeEnum.ANNOTATION);
+        omtdGetPublicationTypeEnumFromLabel.put("Research Article", PublicationTypeEnum.RESEARCH_ARTICLE);
+        omtdGetPublicationTypeEnumFromLabel.put("Doctoral Thesis", PublicationTypeEnum.DOCTORAL_THESIS);
+        omtdGetPublicationTypeEnumFromLabel.put("Conference Object", PublicationTypeEnum.CONFERENCE_OBJECT);
+        omtdGetPublicationTypeEnumFromLabel.put("Pre Print", PublicationTypeEnum.PRE_PRINT);
+        omtdGetPublicationTypeEnumFromLabel.put("Research Report", PublicationTypeEnum.RESEARCH_REPORT);
+        omtdGetPublicationTypeEnumFromLabel.put("Book", PublicationTypeEnum.BOOK);
+        omtdGetPublicationTypeEnumFromLabel.put("Master Thesis", PublicationTypeEnum.MASTER_THESIS);
+        omtdGetPublicationTypeEnumFromLabel.put("Book Part", PublicationTypeEnum.BOOK_PART);
+        omtdGetPublicationTypeEnumFromLabel.put("Report", PublicationTypeEnum.REPORT);
+        omtdGetPublicationTypeEnumFromLabel.put("Review", PublicationTypeEnum.REVIEW);
+        omtdGetPublicationTypeEnumFromLabel.put("Bachelor Thesis", PublicationTypeEnum.BACHELOR_THESIS);
+        omtdGetPublicationTypeEnumFromLabel.put("Lecture", PublicationTypeEnum.LECTURE);
+        omtdGetPublicationTypeEnumFromLabel.put("Patent", PublicationTypeEnum.PATENT);
+        omtdGetPublicationTypeEnumFromLabel.put("Contribution to Journal", PublicationTypeEnum.CONTRIBUTION_TO_JOURNAL);
+        omtdGetPublicationTypeEnumFromLabel.put("Data Paper", PublicationTypeEnum.DATA_PAPER);
+        omtdGetPublicationTypeEnumFromLabel.put("Other", PublicationTypeEnum.OTHER);
+
+        omtdGetRightsStmtEnumFromLabel.put("Open Access", RightsStatementEnum.OPEN_ACCESS);
+        omtdGetRightsStmtEnumFromLabel.put("Restricted Access", RightsStatementEnum.RESTRICTED_ACCESS);
+
     }
 
     public Map<OMTDFacetEnum, String> getOmtdFacetLabels() {
@@ -53,5 +77,13 @@ public class OMTDFacetInitializer {
 
     public Map<PublicationTypeEnum, String> getOmtdPublicationTypeLabels() {
         return omtdPublicationTypeLabels;
+    }
+
+    public Map<String, PublicationTypeEnum> getOmtdGetPublicationTypeEnumFromLabel() {
+        return omtdGetPublicationTypeEnumFromLabel;
+    }
+
+    public Map<String, RightsStatementEnum> getOmtdGetRightsStmtEnumFromLabel() {
+        return omtdGetRightsStmtEnumFromLabel;
     }
 }

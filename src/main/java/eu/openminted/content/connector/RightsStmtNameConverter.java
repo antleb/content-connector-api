@@ -2,6 +2,8 @@ package eu.openminted.content.connector;
 
 import eu.openminted.registry.domain.RightsStatementEnum;
 
+import java.util.List;
+
 public class RightsStmtNameConverter {
     public static RightsStatementEnum convert(String bestLicence) {
 
@@ -17,4 +19,20 @@ public class RightsStmtNameConverter {
         }
         return null;
     }
+
+
+    public static void convert(List<String> rightsValues, RightsStatementEnum rightsStatementEnum) {
+
+        switch (rightsStatementEnum) {
+            case OPEN_ACCESS:
+                rightsValues.add("Open Access");
+                break;
+            case RESTRICTED_ACCESS:
+                rightsValues.add("Embargo");
+                break;
+            default:
+                break;
+        }
+    }
+
 }
