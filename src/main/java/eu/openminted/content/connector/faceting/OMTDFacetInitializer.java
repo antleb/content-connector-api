@@ -28,7 +28,9 @@ public class OMTDFacetInitializer {
 
         omtdPublicationTypeLabels.put(PublicationTypeEnum.ANNOTATION, "Annotation");
         omtdPublicationTypeLabels.put(PublicationTypeEnum.RESEARCH_ARTICLE, "Research Article");
+        omtdPublicationTypeLabels.put(PublicationTypeEnum.RESEARCH_PROPOSAL, "Research Proposal");
         omtdPublicationTypeLabels.put(PublicationTypeEnum.DOCTORAL_THESIS, "Doctoral Thesis");
+        omtdPublicationTypeLabels.put(PublicationTypeEnum.THESIS, "Thesis");
         omtdPublicationTypeLabels.put(PublicationTypeEnum.CONFERENCE_OBJECT, "Conference Object");
         omtdPublicationTypeLabels.put(PublicationTypeEnum.PRE_PRINT, "Pre Print");
         omtdPublicationTypeLabels.put(PublicationTypeEnum.RESEARCH_REPORT, "Research Report");
@@ -46,6 +48,8 @@ public class OMTDFacetInitializer {
 
         omtdGetPublicationTypeEnumFromLabel.put("Annotation", PublicationTypeEnum.ANNOTATION);
         omtdGetPublicationTypeEnumFromLabel.put("Research Article", PublicationTypeEnum.RESEARCH_ARTICLE);
+        omtdGetPublicationTypeEnumFromLabel.put("Research Proposal", PublicationTypeEnum.RESEARCH_PROPOSAL);
+        omtdGetPublicationTypeEnumFromLabel.put("Thesis", PublicationTypeEnum.THESIS);
         omtdGetPublicationTypeEnumFromLabel.put("Doctoral Thesis", PublicationTypeEnum.DOCTORAL_THESIS);
         omtdGetPublicationTypeEnumFromLabel.put("Conference Object", PublicationTypeEnum.CONFERENCE_OBJECT);
         omtdGetPublicationTypeEnumFromLabel.put("Pre Print", PublicationTypeEnum.PRE_PRINT);
