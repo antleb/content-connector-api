@@ -1220,6 +1220,7 @@ public class LanguageConverter {
         _openaire_name_to_openminted_name.put("Wakashan", "Wakashan languages");
         _openaire_name_to_openminted_name.put("Spanish", "Spanish; Castilian");
         _openaire_name_to_openminted_name.put("Bokmål, Norwegian; Norwegian Bokmål", "BokmC%l, Norwegian; Norwegian BokmC%l");
+        _openaire_name_to_openminted_name.put("Bokm?l, Norwegian; Norwegian Bokm?l", "BokmC%l, Norwegian; Norwegian BokmC%l");
         _openaire_name_to_openminted_name.put("Miscellaneous", "Uncoded languages");
         _openaire_name_to_openminted_name.put("Frisian", "Northern Frisian");
         _openaire_name_to_openminted_name.put("Middle English", "English, Middle (1100-1500)");
@@ -1231,6 +1232,7 @@ public class LanguageConverter {
         _openaire_name_to_openminted_name.put("Raeto-Romance", "Romance languages");
         _openaire_name_to_openminted_name.put("Khmer", "Central Khmer");
         _openaire_name_to_openminted_name.put("Serbo-Croatian", "Serbian");
+        _openaire_name_to_openminted_name.put("\'eng\'", "English");
     }
 
     public Map<String, String> getLangCodeToName() {
