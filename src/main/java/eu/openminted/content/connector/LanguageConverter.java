@@ -1207,7 +1207,7 @@ public class LanguageConverter {
         _openaire_name_to_openminted_name.put("Nilo-Saharan", "Nilo-Saharan languages");
         _openaire_name_to_openminted_name.put("North American Indian", "North American Indian languages");
         _openaire_name_to_openminted_name.put("Nubian", "Nubian languages");
-        _openaire_name_to_openminted_name.put("Old English", "Old English(ca. 450-1100)");
+        _openaire_name_to_openminted_name.put("Old English", "English, Old (ca. 450-1100)");
         _openaire_name_to_openminted_name.put("Otomian", "Otomian languages");
         _openaire_name_to_openminted_name.put("Papuan-Australian", "Australian languages");
         _openaire_name_to_openminted_name.put("Prakrit", "Prakrit languages");
