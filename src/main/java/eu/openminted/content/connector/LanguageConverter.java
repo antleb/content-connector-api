@@ -1219,7 +1219,7 @@ public class LanguageConverter {
         _openaire_name_to_openminted_name.put("Sorbian", "Sorbian languages");
         _openaire_name_to_openminted_name.put("Wakashan", "Wakashan languages");
         _openaire_name_to_openminted_name.put("Spanish", "Spanish; Castilian");
-        _openaire_name_to_openminted_name.put("Nynorsk, Norwegian; Norwegian Nynorsk", "Nynorsk, Norwegian; Norwegian Nynorsk");
+        _openaire_name_to_openminted_name.put("Norwegian Nynorsk; Nynorsk, Norwegian", "Norwegian Nynorsk; Nynorsk, Norwegian");
         _openaire_name_to_openminted_name.put("Bokmål, Norwegian; Norwegian Bokmål", "Bokmål, Norwegian; Norwegian Bokmål");
         _openaire_name_to_openminted_name.put("Bokm?l, Norwegian; Norwegian Bokm?l", "Bokmål, Norwegian; Norwegian Bokmål");
         _openaire_name_to_openminted_name.put("Miscellaneous", "Uncoded languages");
