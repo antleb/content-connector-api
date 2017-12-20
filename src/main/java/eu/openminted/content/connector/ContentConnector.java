@@ -1,7 +1,7 @@
 package eu.openminted.content.connector;
 
+import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 
 /**
  * Created by antleb on 11/7/16.
@@ -15,7 +15,7 @@ public interface ContentConnector {
      *
      * @return a page of search results
      */
-    SearchResult search(Query query);
+    SearchResult search(Query query) throws IOException;
 
     /**
      * Returns the contents of the fulltext of a document. Metadata about filename, mime type, etc should
