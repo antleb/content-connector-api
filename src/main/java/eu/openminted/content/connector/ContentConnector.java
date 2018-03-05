@@ -46,7 +46,7 @@ public interface ContentConnector {
     InputStream fetchMetadata(Query query);
 
     /**
-     * Returns an identifier for this connector ("OpenAIRE", "CORE", "Crossref",...).
+     * Returns an identifier for this connector ("omtd", "CORE", "Crossref",...).
      *
      * @return
      */
